@@ -1,0 +1,2 @@
+# ignore the plugin dir, which are, I think, compiled plugins
+/plugin
