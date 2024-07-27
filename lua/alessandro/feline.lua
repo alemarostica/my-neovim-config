@@ -19,4 +19,22 @@ if not status_ok then
   return
 end
 
+-- Colors of the moonfly theme, definetely not all of them are needed
+local colorscheme = {
+  black = "#202020",
+  bg = "#1b1b1b",
+  white = "#ffffff",
+  yellow = "#e3c78a",
+  orange = "#de935f",
+  green = "#8cc85f",
+  oceanblue = "#2e2e2e", -- Momentarily overridden with gray until I learn to properly config feline
+  violet = "#cf87e8",
+  red = "#ff5454",
+  cyan = "#79dac8",
+  skyblue = "#74b2ff",
+  fg = "#d0d0d0",
+  magenta = "#ae81ff",
+}
+
 feline.setup()
+feline.use_theme(colorscheme)
