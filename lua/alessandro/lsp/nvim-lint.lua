@@ -29,6 +29,8 @@ lint.linters_by_ft = {
 	typescript = { "eslint_d" },
 	lua = { "luacheck" },
 	sh = { "shellcheck" },
+  bash = { "shellcheck" },
+  yaml = { "yamllint" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -45,6 +47,6 @@ vim.api.nvim_create_autocmd({
 	end,
 })
 
-vim.keymap.set("n", "<leader>l", function()
+vim.keymap.set("n", "<leader>L", function()
 	lint.try_lint()
-end)
+end, { desc = "Try Lint" })

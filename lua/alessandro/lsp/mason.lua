@@ -24,6 +24,7 @@ local servers = {
   "csharp_ls",
   "dockerls",
   "yamlls",
+  "vhdl_ls",
 }
 
 local lint_and_form = {

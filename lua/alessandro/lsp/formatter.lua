@@ -49,4 +49,4 @@ vim.keymap.set({ "n", "v" }, "<leader>mp", function ()
     async = false,
     timeout_ms = 500,
   })
-end)
+end, { desc = "Format" })

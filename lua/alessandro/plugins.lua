@@ -110,7 +110,7 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring" -- Makes commenting ts aware
 
   -- Git integration
-  use { "lewis6991/gitsigns.nvim", commit = "def49e48c6329527e344d0c99a0d2cd9fdf6bb84" }
+  use { "lewis6991/gitsigns.nvim" }
 
   -- NvimTree
   use "nvim-tree/nvim-web-devicons"
@@ -127,7 +127,10 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
 
   -- Bufferline
-  use 'freddiehaddad/feline.nvim'
+  use "freddiehaddad/feline.nvim"
+
+  -- Which Key
+  use "folke/which-key.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

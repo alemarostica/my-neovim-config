@@ -15,6 +15,14 @@
 
 local opts = { noremap = true, silent = true }
 
+local function createOpts(desc)
+  return {
+    noremap = true,
+    silent = true,
+    desc = desc,
+  }
+end
+
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -41,8 +49,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- NvimTree
-  keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-  
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", createOpts("TreeToggle"))
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -54,7 +62,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
+-- Press jk fast to exit
 keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
@@ -84,5 +92,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
+keymap(
+	"n",
+	"<leader>f",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+	createOpts("Find Files")
+)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", createOpts("Live Grep"))
+
+-- Which-Key
+keymap("n", "h", "<cmd>WhichKey<cr>", createOpts("Show WhichKey"))
+keymap("v", "h", "<cmd>WhichKey<cr>", createOpts("Show WhichKey"))

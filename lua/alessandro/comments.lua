@@ -20,6 +20,26 @@ if not status_ok then
 end
 
 comment.setup {
+  toggler = {
+    -- Line comment toggler
+    line = 'glc',
+    -- Block comment toggler
+    block = 'gbc',
+  },
+  opleader = {
+    -- Line comment keymap
+    line = 'gl',
+    -- Block comment keymap
+    block = 'gb',
+  },
+  extra = {
+    -- Add comment line above
+    above = 'gla',
+    -- Add comment line below
+    below = 'glb',
+    -- Add comment line at end of line
+    eol = 'gle',
+  },
   pre_hook = function (ctx)
     local U = require("Comment.utils")
     
