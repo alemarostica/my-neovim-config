@@ -27,7 +27,8 @@ end
 
 -- local tree_cb = nvim_tree_config.nvim_tree_callback
 
-nvim_tree.setup {disable_netrw = true,
+nvim_tree.setup {
+    disable_netrw = true,
     hijack_netrw = true,
     open_on_tab = false,
     hijack_cursor = false,
@@ -52,7 +53,7 @@ nvim_tree.setup {disable_netrw = true,
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
         timeout = 500,
     },
     view = {
