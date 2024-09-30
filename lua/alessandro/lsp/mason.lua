@@ -25,6 +25,7 @@ local servers = {
   "dockerls",
   "yamlls",
   "vhdl_ls",
+  "bufls",
 }
 
 local lint_and_form = {
@@ -37,6 +38,7 @@ local lint_and_form = {
   "luacheck",
   "shellcheck",
   "yamllint",
+  "buf",
 
   -- Formatters
   "asmfmt",
@@ -45,7 +47,7 @@ local lint_and_form = {
   "cmakelang",
   "prettier",
   "shfmt",
-  "stylua"
+  "stylua",
 }
 
 local settings = {
