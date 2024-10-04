@@ -132,6 +132,24 @@ return packer.startup(function(use)
   -- Which Key
   use "folke/which-key.nvim"
 
+  -- DAP, who knows where this will go
+  use "mfussenegger/nvim-dap"
+  use "jedrzejboczar/nvim-dap-cortex-debug" -- Cortex ARM Debug
+
+  -- Some VSCODE bullshittery
+  use {
+  'EthanJWright/vs-tasks.nvim',
+  requires = {
+    'nvim-lua/popup.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    {
+      'Joakker/lua-json5',
+      run = './install.sh'
+    }
+  }
+}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -28,7 +28,7 @@ local servers = {
   "bufls",
 }
 
-local lint_and_form = {
+local other_mason = {
   -- Linters
   "cmakelang",
   "cpplint",
@@ -44,14 +44,19 @@ local lint_and_form = {
   "asmfmt",
   "black",
   "clang-format",
-  "cmakelang",
   "prettier",
   "shfmt",
   "stylua",
+  
+  -- DAPs
+  "codelldb",
+  "cortex-debug",
+  "cpptools",
+  "debugpy",
 }
 
 local settings = {
-  ensure_installed = lint_and_form, -- Don't think it works
+  ensure_installed = servers, -- Don't think it works
   ui = {
     border = "none",
     icons = {
@@ -70,7 +75,7 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 require("mason-tool-installer").setup({
-  ensure_installed = lint_and_form
+  ensure_installed = other_mason,
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")

@@ -103,3 +103,9 @@ keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", createOpts("Live Grep")
 -- Which-Key
 keymap("n", "h", "<cmd>WhichKey<cr>", createOpts("Show WhichKey"))
 keymap("v", "h", "<cmd>WhichKey<cr>", createOpts("Show WhichKey"))
+
+-- VS-Tasks
+keymap("n", "<Leader>ta", "<cmd>lua require(\"telescope\").extensions.vstask.tasks()<cr>", createOpts("List tasks"))
+keymap("n", "<Leader>ti", "<cmd>lua require(\"telescope\").extensions.vstask.inputs()<cr>", createOpts("Set inputs"))
+keymap("n", "<Leader>th", "<cmd>lua require(\"telescope\").extensions.vstask.history()<cr>", createOpts("Tasks history"))
+keymap("n", "<Leader>tl", "<cmd>lua require(\"telescope\").extensions.vstask.launch()<cr>", createOpts("Launch task"))
