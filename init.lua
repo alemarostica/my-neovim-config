@@ -34,6 +34,6 @@ require("alessandro.feline")
 require("alessandro.which-key")
 require("alessandro.dap")
 require("alessandro.vs-tasks")
-vim.cmd [[
+vim.cmd([[
   set mouse=
-]]
+]])
