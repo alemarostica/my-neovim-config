@@ -16,38 +16,19 @@ Run ```nvim``` in your terminal and wait for the plugins to be installed. You wi
 This config assumes that you have Nerd Fonts v3.0.0 or higher. If you are using an older version then please update your [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) otherwise there will be missing or wrong glyphs
 
 # Dependencies
-This specific config requires a number of binaries installed on the device to support LSP, formatting alnd linting. Namely:
-- asmfmt
-- asm-lsp
-- bash-language-server
-- black
-- clangd
-- clang-format
-- cmake-language-server
-- cmakelang
-- codelldb
-- cpplint
-- cpptools
-- csharp-language-server
-- dockerfile-language-server
-- eslint_d
-- flake8
-- json-lsp
-- jsonlint
-- lua-language-server
-- luacheck
-- prettier
-- pyright
-- rust-analyzer
-- rust-tools
-- shellcheck
-- shfmt
-- stylua
-- yaml-language-server
-- yamllint
-
-Good luck figuring out which one is installed in which way.
+This specific config requires a number of binaries installed on the device. Namely:
+- unzip
+- wget
+- curl
+- gzip
+- tar
+- bash (DUH)
+- sh (DUH)
+- ripgrep
+- A clipboard tool (xclip)
 
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed.
-
+**NOTE** perl provider and Neovim::Ext cpan modules might should be installed
+**NOTE** Ruby provider and "neovim" gem should be installed
+**NOTE** python3 venv must be setup
 Also run ```:checkhealth``` and setup everything according to the results.
