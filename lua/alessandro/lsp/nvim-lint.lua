@@ -31,6 +31,9 @@ lint.linters_by_ft = {
 	sh = { "shellcheck" },
   bash = { "shellcheck" },
   yaml = { "yamllint" },
+  protobuf = { "buf" },
+  markdown = { "vale" },
+  latex = { "vale" },
 }
 
 local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

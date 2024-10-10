@@ -62,6 +62,9 @@ local kind_icons = {
 }
 
 cmp.setup {
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect,fuzzy',
+  },
   snippet = {
     expand = function(args)
       snip.lsp_expand(args.body)
