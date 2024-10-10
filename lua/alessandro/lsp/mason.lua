@@ -26,6 +26,7 @@ local servers = {
   "yamlls",
   "vhdl_ls",
   "bufls",
+  "vale_ls",
 }
 
 local other_mason = {
@@ -39,6 +40,7 @@ local other_mason = {
   "shellcheck",
   "yamllint",
   "buf",
+  "vale",
 
   -- Formatters
   "asmfmt",
@@ -47,6 +49,7 @@ local other_mason = {
   "prettier",
   "shfmt",
   "stylua",
+  "latexindent",
   
   -- DAPs
   "codelldb",
