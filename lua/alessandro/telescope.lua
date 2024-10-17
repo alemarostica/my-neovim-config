@@ -21,8 +21,24 @@ end
 local actions = require("telescope.actions")
 
 telescope.setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  },
   defaults = {
-    
+    vimgrep_arguments = {
+      "rg",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--no-ignore",
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
@@ -107,3 +123,5 @@ telescope.setup {
     -- }
     -- please take a look at the readme of the extension you want to configure
 }
+
+require('telescope').load_extension('fzf')
