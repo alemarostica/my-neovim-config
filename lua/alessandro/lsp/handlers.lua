@@ -77,10 +77,10 @@ local function lsp_keymaps(bufnr)
 	local keymap = vim.api.nvim_buf_set_keymap
 	keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", createOpts("LSP Declaration"))
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", createOpts("LSP Definition"))
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", createOpts("LSP Hover"))
+	keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", createOpts("LSP Hover"))
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", createOpts("LSP Implementation"))
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", createOpts("LSP References"))
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", createOpts("LSP Open Float"))
+	keymap(bufnr, "n", "gf", "<cmd>lua vim.diagnostic.open_float()<CR>", createOpts("LSP Open Float"))
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", createOpts("LSP Format"))
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", createOpts("LSP Info"))
 	keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", createOpts("LSP Code Action"))
@@ -92,14 +92,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "sumneko_lua" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")
 	if not status_ok then
@@ -108,9 +100,9 @@ M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 end
 
-vim.cmd [[
-  set signcolumn=yes
-  autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]]
+-- vim.cmd [[
+--  set signcolumn=yes
+--  autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+-- ]]
 
 return M
