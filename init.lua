@@ -37,3 +37,6 @@ require("alessandro.vs-tasks")
 vim.cmd([[
   set mouse=
 ]])
+vim.cmd([[
+  set jumpoptions+=stack
+]]) -- I love this, makes the jumplist behave like a stack
