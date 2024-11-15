@@ -19,11 +19,16 @@ rt.setup({
 	server = {
 		on_attach = function(_, bufnr)
 			-- Hover actions
-			vim.keymap.set("n", "<Leader>d", rt.hover_actions.hover_actions, { buffer = bufnr, desc = "RUST-TOOLS Diagnostics" })
+			vim.keymap.set(
+				"n",
+				"<Leader>rd",
+				rt.hover_actions.hover_actions,
+				{ buffer = bufnr, desc = "RUST-TOOLS Diagnostics" }
+			)
 			-- Code action groups
 			vim.keymap.set(
 				"n",
-				"<Leader>a",
+				"<Leader>ra",
 				rt.code_action_group.code_action_group,
 				{ buffer = bufnr, desc = "RUST-TOOLS Code Action Group" }
 			)
