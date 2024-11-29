@@ -25,7 +25,7 @@ local servers = {
   "dockerls",
   "yamlls",
   "vhdl_ls",
-  "buf_ls",
+  "pbls",
   "vale_ls",
 }
 
